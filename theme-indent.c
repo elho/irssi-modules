@@ -109,7 +109,7 @@ static void read_settings(void)
 
         for (count = 0, i = (MSGLEVEL_ALL+1)/2; i >= 1; i /= 2, count++) {
 		name = bits2level(i);
-                g_strdown(name);
+		g_ascii_strdown(name, -1);
 
 		format = g_strdup_printf("{indent_%s}", name);
 		get_theme_text(format, &level_texts[count]);
